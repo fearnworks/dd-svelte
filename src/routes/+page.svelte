@@ -16,7 +16,7 @@
           <h1 class="text-7xl font-bold">Character Builder</h1>
           <p class="py-6 text-2xl">Character builder</p>
           {#if $userData?.username}
-            <a href="/{$userData.username}/edit" class="btn btn-primary">Edit Profile</a>
+            <a href="/app/{$userData.username}/edit" class="btn btn-primary">Edit Profile</a>
           {:else}
             <a href="/login" class="btn btn-primary">Get Started</a>
           {/if}

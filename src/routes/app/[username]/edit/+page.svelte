@@ -89,17 +89,17 @@
         <p>
           Profile Link:
           <a
-            href={`/${$userData?.username}`}
+            href={`/app/${$userData?.username}`}
             class="link link-accent"
           >
-            https://dungeon-driver-svelte.vercel.app/{$userData?.username}
+            https://dungeon-driver-svelte.vercel.app/app/{$userData?.username}
           </a>
         </p>
       </div>
   
       <div class="text-center my-4">
         <a class="btn btn-outline btn-xs" href="/login/photo">Change photo</a>
-        <a class="btn btn-outline btn-xs" href={`/${$userData.username}/bio`}>Edit Bio</a>
+        <a class="btn btn-outline btn-xs" href={`/app/${$userData.username}/bio`}>Edit Bio</a>
       </div>
   
       <form class="form-control">
