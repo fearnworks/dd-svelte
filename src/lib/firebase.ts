@@ -53,6 +53,8 @@ export const user = userStore();
 
 
 
+
+
 /**
  * @param  {string} path document path or reference
  * @param  {any} startWith optional default data
@@ -86,12 +88,36 @@ interface UserData {
   photoURL: string;
   published: boolean;
   links: any[];
+  characters: string[];
   admin: boolean;
 }
 
 export const userData: Readable<UserData | null> = derived(user, ($user, set) => { 
   if ($user) {
     return docStore<UserData>(`users/${$user.uid}`).subscribe(set);
+  } else {
+    set(null); 
+  }
+});  
+
+// ################################### CHARACTER
+
+/**
+ * @returns a store with the character list
+ */
+interface CharacterData {
+  uid:         string;
+  name:       string;
+  class:      string;
+  race:       string;
+  level:      number;
+  bio:        string;
+  background: string;
+}
+
+export const characterData: Readable<CharacterData | null> = derived(user, ($character, set) => { 
+  if ($character) {
+    return docStore<CharacterData>(`characters/${$character.uid}`).subscribe(set);
   } else {
     set(null); 
   }

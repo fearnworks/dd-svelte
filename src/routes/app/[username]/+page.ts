@@ -27,6 +27,7 @@ export const load = (async ({ params }) => {
   return {
     username: data.username,
     photoURL: data.photoURL,
+    characters: data.characters ?? [],
     bio: data.bio,
     links: data.links ?? [],
   };

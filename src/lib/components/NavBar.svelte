@@ -10,6 +10,7 @@
     <div class="flex-none">
       <ul class="menu menu-horizontal px-1">
         <li><a href="/app/admin">Admin</a></li>
+        <li><a href="/app/character">Characters</a></li>
         <li>           
           <a href="/app/{$userData.username}/edit" class="btn btn-primary">Edit Profile</a></li>
         <li>

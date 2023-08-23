@@ -11,9 +11,9 @@
   </svelte:head>
   
   
-  <main class="prose text-center mx-auto mt-8">
+  <div class="content-center space-x-6 block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
 
-    <h1 class="text-7xl text-purple-500">
+    <h1 class="mb-3 flex-1 text-3xl text-purple-300">
       @{data.username}
     </h1>
   
@@ -21,17 +21,24 @@
       src={data.photoURL ?? "/user.png"}
       alt="photoURL"
       width="256"
-      class="mx-auto"
+      class=" flex-1 mx-auto"
     />
-  
-    <p class="text-xl my-8">{data.bio ?? "no bio yet..."}</p>
+    <div class="flex-1">
+      <p class="text-xl my-8">{data.bio ?? "no bio yet..."}</p>
+    </div>
     <ul class="list-none">
       {#each data.links as item}
       <li class="my-2">
         <UserLink {...item} />
       </li>
       {/each}
+      <h1>Characters:</h1>
+      {#each data.characters as character}
+      <li class="my-2">
+        <p>Character : {character}</p>
+      </li>
+      {/each}
     </ul>
   
-  </main>
+  </div>
   
